@@ -65,7 +65,7 @@ end
 gem "jwt", "~> 2.10"
 
 group :development, :test do
-  gem 'rspec-rails', '~> 6.0'
+  gem 'rspec-rails', '~> 7.1'
   gem 'factory_bot_rails' # For creating test data
   gem 'faker' # For generating fake data
 end

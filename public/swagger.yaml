@@ -1,0 +1,103 @@
+openapi: 3.0.1
+info:
+  title: "Bookstore API"
+  description: "API documentation for the Bookstore application"
+  version: "v1"
+
+servers:
+  - url: "http://localhost:3000"
+    description: "Local Development Server"
+
+paths:
+  /api/v1/users/signup:
+    post:
+      summary: "User Signup"
+      description: "Register a new user and return a success message."
+      operationId: "signupUser"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: "Abhinav Lather"
+                    email:
+                      type: string
+                      example: "latherabhinav55@gmail.com"
+                    password:
+                      type: string
+                      example: "Abhinav@2021"
+                    mobile_number:
+                      type: string
+                      example: "9876543210"
+                    
+      responses:
+        "201":
+          description: "User registered successfully"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "User registered successfully"
+        "400":
+          description: "Invalid input"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Email has already been taken"
+
+  /api/v1/users/login:
+    post:
+      summary: "User Login"
+      description: "Authenticate user and return a JWT token."
+      operationId: "loginUser"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      example: "latherabhinav55@gmail.com"
+                    password:
+                      type: string
+                      example: "Abhinav@2021"
+      responses:
+        "200":
+          description: "Successful login"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        "401":
+          description: "Invalid credentials"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid email or password"

@@ -70,11 +70,9 @@ group :development, :test do
   gem 'faker' # For generating fake data
 end
 
-group :development, :test do
-  
-  gem 'rswag-api'
-  gem 'rswag-ui'
-  gem 'rswag-specs'
-end
 
-gem 'rswag'
+
+gem "rswag-api", "~> 2.16"
+gem "rswag-ui", "~> 2.16"
+
+gem "rswag", "~> 2.16"

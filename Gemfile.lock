@@ -422,10 +422,9 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 8.0.1)
   rspec-rails (~> 6.0)
-  rswag
-  rswag-api
-  rswag-specs
-  rswag-ui
+  rswag (~> 2.16)
+  rswag-api (~> 2.16)
+  rswag-ui (~> 2.16)
   rubocop-rails-omakase
   selenium-webdriver
   solid_cable
